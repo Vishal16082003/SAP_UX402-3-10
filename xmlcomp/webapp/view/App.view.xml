@@ -1,0 +1,34 @@
+<mvc:View
+    controllerName="demo.xml.xmlcomp.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:custom="demo.xml.xmlcomp.control">
+
+    <App>
+
+        <pages>
+
+            <Page title="XML Composite Example">
+
+                <content>
+
+                    <custom:EmployeeCard
+                        empName="John"
+                        empRole="Developer" />
+
+                    <custom:EmployeeCard
+                        empName="David"
+                        empRole="Architect" />
+                    <custom:EmployeeCard
+                        empName="Kartik"
+                        empRole="Application Developer" />
+
+                </content>
+
+            </Page>
+
+        </pages>
+
+    </App>
+
+</mvc:View>

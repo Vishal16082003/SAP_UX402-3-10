@@ -1,0 +1,3 @@
+ID,EmpId,EmpFirstName,EmpLastName,EmpDeptName,EmpLoc,EmpSalary,EmpRole
+1,101,Vishal,Patil,SAP,Pune,30000,Developer
+2,102,KArtik,NIkum,SAP,Pune,30000,Developer

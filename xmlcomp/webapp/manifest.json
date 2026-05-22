@@ -1,0 +1,30 @@
+{
+    "_version": "1.59.0",
+
+    "sap.app": {
+        "id": "demo.xml.xmlcomp",
+        "type": "application",
+        "title": "XML Composite Demo"
+    },
+
+    "sap.ui": {
+        "technology": "UI5"
+    },
+
+    "sap.ui5": {
+
+        "rootView": {
+            "viewName": "demo.xml.xmlcomp.view.App",
+            "type": "XML",
+            "id": "App",
+            "async": true
+        },
+
+        "dependencies": {
+            "minUI5Version": "1.120.0",
+            "libs": {
+                "sap.m": {}
+            }
+        }
+    }
+}

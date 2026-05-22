@@ -1,0 +1,46 @@
+{
+  "sap.app": {
+    "id": "demo.mock.mocky",
+    "type": "application",
+    "title": "Mock Server Demo",
+
+    "dataSources": {
+      "mainService": {
+        "uri": "/mockserver/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
+    }
+  },
+
+  "sap.ui5": {
+
+    "rootView": {
+      "viewName": "demo.mock.mocky.view.Main",
+      "type": "XML",
+      "async": true,
+      "id": "Main"
+    },
+
+    "dependencies": {
+      "minUI5Version": "1.120.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+
+    "models": {
+      "": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "mainService",
+        "settings": {
+          "useBatch": false
+        }
+      }
+    }
+  }
+}

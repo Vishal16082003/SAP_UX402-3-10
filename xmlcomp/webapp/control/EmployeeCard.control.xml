@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <VBox
+        class="sapUiSmallMargin"
+        width="300px">
+
+        <Panel headerText="Employee Information">
+
+            <VBox class="sapUiSmallMargin">
+
+                <Text id="txtName" />
+
+                <Text id="txtRole" />
+
+            </VBox>
+
+        </Panel>
+
+    </VBox>
+
+</core:FragmentDefinition>

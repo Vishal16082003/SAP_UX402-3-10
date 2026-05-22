@@ -1,0 +1,4 @@
+SalesOrderNo,CustomerName,Amount,Currency,Status,Remark
+S01001,TCS,1000,INR,Open,ongoing
+S01002,Infosys,2000,INR,Approved,complete
+S01003,Wipro,3000,INR,Closed,fixed

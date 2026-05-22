@@ -1,0 +1,47 @@
+<!-- <mvc:View controllerName="demo.login.loginpage.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App id="app">
+    </App>
+</mvc:View> -->
+<mvc:View
+  controllerName="demo.login.loginpage.controller.App"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <App>
+  <Page title="Login Page">
+    <content>
+      <VBox class="sapUiSmallMargin" alignItems="Center">
+        <Input
+          id="email"
+          placeholder="Enter Email"
+          width="300px" />
+
+        <Input
+          id="password"
+          type="Password"
+          placeholder="Enter Password"
+          width="300px" />
+
+        <HBox class="sapUiSmallMarginTop">
+
+          <Button
+            text="Submit"
+            type="Emphasized"
+            press="onSubmit" />
+
+          <Button
+            text="Cancel"
+            type="Reject"
+            press="onCancel"
+            class="sapUiSmallMarginBegin" />
+
+        </HBox>
+
+      </VBox>
+
+    </content>
+  </Page>
+</App>
+</mvc:View>
