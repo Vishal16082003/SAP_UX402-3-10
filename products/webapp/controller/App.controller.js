@@ -1,59 +1,80 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
-    "sap/ui/model/json/JSONModel",
-    "sap/m/MessageToast",
-    "sap/m/MessageBox"
+  "sap/ui/core/mvc/Controller",
+  "sap/ui/model/json/JSONModel",
+  "sap/m/MessageToast",
+  "sap/m/MessageBox"
 ], function (Controller, JSONModel, MessageToast, MessageBox) {
-    "use strict";
+  "use strict";
 
-    return Controller.extend("demo.prod.controller.Product", {
+  return Controller.extend("demo.prod.controller.Product", {
 
-        sBaseUrl: "https://mtsapserver6g.themdlabs.com:44300/sap/opu/odata4/sap/zui_product_007_04/srvd/sap/zui_product_007/0001",
+    sBaseUrl: "/sap/opu/odata4/sap/zui_product_007_04/srvd/sap/zui_product_007/0001/ZI_PRODUCT_007",
 
-        onInit: function () {
-            this.loadProducts();
-        },
- loadProducts: function () {
-            var oModel = new JSONModel();
-            var that = this;
- },
- onSubmit: function () {
+    onInit: function () {
+      this.loadProducts();
+    },
+    loadProducts: function () {
+      var oModel = new JSONModel();
+      var that = this;
+    },
 
-            var sProductId = this.byId("productId").getValue();
-            var sProductName = this.byId("productName").getValue();
-            var sPrice = this.byId("price").getValue();
-            var sCurrency = this.byId("currency").getValue();
+    onSubmit: function () {
 
-            var oPayload = {
-                product_id: sProductId,
-                product_name: sProductName,
-                price: parseFloat(sPrice),
-                currency: sCurrency
-            };
+      var sProductId = this.byId("productId").getValue();
+      var sProductName = this.byId("productName").getValue();
+      var sPrice = this.byId("price").getValue();
+      var sCurrency = this.byId("currency").getValue();
 
-            var that = this;
+      var oPayload = {
+        product_id: sProductId,
+        product_name: sProductName,
+        price: parseFloat(sPrice),
+        currency: sCurrency
+      };
 
-$.ajax({
-                url: this.sBaseUrl,
-                method: "POST",
-                contentType: "application/json",
-                data: JSON.stringify(oPayload),
+      var that = this;
 
-                headers: {
-                    "Content-Type": "application/json"
-                },
+      $.ajax({
+          url: this.sBaseUrl,
+          method : "GET",
+          headers: {
+            "X-CSRF-Token": "Fetch"
+          },
 
-                success: function () {
-                    MessageToast.show("Product Created Successfully");
-                    that.loadProducts();
-                    that.clearFields();
-                },
+          success :function(data, textStatus, request){
+            var sToken = request.getResponseHeader("X-CSRF-Token");
 
-                error: function (oError) {
-                    MessageBox.error("Create Failed");
-                    console.log(oError);
-                }
+            $.ajax({
+
+              url: that.sBaseUrl,
+              method : "POST",
+              contentType: "application/json",
+              data: JSON.stringify(oPayload),
+
+              headers: {
+                "X-CSRF-TOKEN" : sToken,
+                contentType : "application/json"
+              },
+
+              success : function() {
+                MessageToast.show("Product created successfully!");
+                that.loadProducts();
+              },
+
+              error : function(oError) {
+                MessageBox.error("Error Failed");
+                console.log(oError);
+              }
             });
-        },
+          },
+
+          erro : function(oError) {
+            MessageBox.error("Failed to fetch CSRF token");
+            console.log(oError);
+          }
+
       });
-    });
+    },
+
+  })
+});
