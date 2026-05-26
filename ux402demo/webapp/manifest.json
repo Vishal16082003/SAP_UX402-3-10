@@ -1,0 +1,41 @@
+{
+  "_version": "1.84.0",
+
+  "sap.app": {
+    "id": "demo.ux402demo",
+    "type": "application",
+    "title": "UX402 Demo"
+  },
+
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+
+    "dependencies": {
+      "minUI5Version": "1.120.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+
+    "rootView": {
+      "viewName": "demo.ux402demo.view.App",
+      "type": "XML",
+      "id": "app",
+      "async": true
+    }
+  }
+}

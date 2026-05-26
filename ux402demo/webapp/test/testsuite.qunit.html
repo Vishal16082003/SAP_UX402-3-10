@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>QUnit Test Suite</title>
+
+    <script
+        src="https://ui5.sap.com/resources/sap-ui-core.js"
+        id="sap-ui-bootstrap"
+        data-sap-ui-theme="sap_fiori_3"
+        data-sap-ui-resourceroots='{
+            "demo": "../../"
+        }'
+        data-sap-ui-async="true">
+    </script>
+
+    <script src="https://ui5.sap.com/resources/sap/ui/thirdparty/qunit.js"></script>
+    <script src="https://ui5.sap.com/resources/sap/ui/thirdparty/sinon.js"></script>
+    <link rel="stylesheet"
+          href="https://ui5.sap.com/resources/sap/ui/thirdparty/qunit-2.css">
+  <script>
+        sap.ui.require([
+            "demo/test/unit/controller/Main.controller"
+        ], function () {
+            QUnit.start();
+        });
+    </script>
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<mvc:View
+    controllerName="demo.ux402demo.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <App id="app">
+
+        <pages>
+
+            <Page title="UX402 Demo">
+
+                <content>
+
+                    <Text text="Page is now visible ✅" />
+
+                    <Button
+                        text="Click Me"
+                        press="onPress" />
+
+                </content>
+
+            </Page>
+
+        </pages>
+        </App>
+        </mvc:View>

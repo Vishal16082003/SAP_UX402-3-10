@@ -1,0 +1,34 @@
+<mvc:View
+    controllerName="demo.ux402demo.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+<App >
+
+    <Page title="UX402 Demo">
+        <content>
+            <Button
+                id="btnAdd"
+                text="Add"
+                press="onAdd" />
+
+            <Button
+                id="btnSubtract"
+                text="Subtract"
+                press="onSubtract" />
+
+            <Button
+                id="btnMultiply"
+                text="Multiply"
+                press="onMultiply" />
+
+            <Button
+                id="btnReset"
+                text="Reset"
+                press="onReset" />
+            <Text
+                id="txtMessage"
+                text="0" />
+        </content>
+    </Page>
+    </App>
+</mvc:View>

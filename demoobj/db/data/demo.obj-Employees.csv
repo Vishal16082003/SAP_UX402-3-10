@@ -1,0 +1,4 @@
+ID,empId,empName,department,designation,salary,currency
+1,1001,Jhon,IT,Consultant,65000,INR
+2,1002,David,HR,Manager,50000,INR
+3,1003,JAY,Finance,Analyst,55000,INR
