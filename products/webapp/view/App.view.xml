@@ -43,7 +43,7 @@
    <Table
                     id="productTable"
                     class="sapUiSmallMarginTop"
-                    items="{/value}">
+                    items="{/ZI_PRODUCT_007}">
 
                     <columns>
                         <Column>
